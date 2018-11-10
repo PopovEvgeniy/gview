@@ -8,7 +8,7 @@ object Form1: TForm1
   ClientWidth = 553
   OnCreate = FormCreate
   OnResize = FormResize
-  LCLVersion = '0.9.30'
+  LCLVersion = '1.8.4.0'
   object ShellTreeView1: TShellTreeView
     Left = 11
     Height = 249

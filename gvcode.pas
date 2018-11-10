@@ -36,7 +36,7 @@ implementation
 procedure window_setup();
 begin
  Application.Title:='GRAPHIC VIEW';
- Form1.Caption:='GRAPHIC VIEW 2.0.8';
+ Form1.Caption:='GRAPHIC VIEW 2.0.9';
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
 end;
@@ -94,7 +94,7 @@ end;
 
 procedure TForm1.ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
 begin
-FileListBox1.Directory:=ShellTreeView1.GetSelectedNodePath();
+FileListBox1.Directory:=ShellTreeView1.Path;
 end;
 
 {$R *.lfm}
