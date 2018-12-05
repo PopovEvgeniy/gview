@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.0.9
+                                Version 2.1.6
 
                         This software made by Popov Evgeniy Alekseyevich
 
@@ -11,7 +11,7 @@ This program is a simple graphic viewer
 System requirement
 
 WINDOWS 2000 or higher for 32 bit system
-WINDOWS 2000 or higher for 64 bit system
+WINDOWS Vista or higher for 64 bit system
 
 Supported formats
 
@@ -50,4 +50,4 @@ Program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. Installer was chan
 2.0.5 — Program was improved.
 2.0.6 - Small changes.
 2.0.7 - Small bugs fixed.
-2.0.8 - 2.0.9 - Small changes.
+2.0.8 - 2.1.6 - Small changes.

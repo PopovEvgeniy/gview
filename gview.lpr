@@ -1,4 +1,4 @@
-program gv;
+program gview;
 
 {$mode objfpc}{$H+}
 
@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, gvcode
+  Forms, gviewcode
   { you can add units after this };
 
 {$R *.res}

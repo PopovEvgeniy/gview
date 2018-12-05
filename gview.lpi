@@ -5,20 +5,21 @@
     <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
+      <Title Value="gview"/>
       <ResourceType Value="res"/>
       <Icon Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
     </i18n>
-    <BuildModes Count="2" Active="Windows 64 bit">
+    <BuildModes Count="2" Active="Windows 32 bit">
       <Item1 Name="Windows 32 bit" Default="True"/>
       <Item2 Name="Windows 64 bit">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="64\gv"/>
+            <Filename Value="64\gview"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -28,6 +29,9 @@
             <SmartLinkUnit Value="True"/>
             <TargetCPU Value="x86_64"/>
             <TargetOS Value="win64"/>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -61,51 +65,31 @@
     </RequiredPackages>
     <Units Count="2">
       <Unit0>
-        <Filename Value="gv.lpr"/>
+        <Filename Value="gview.lpr"/>
         <IsPartOfProject Value="True"/>
         <UsageCount Value="21"/>
       </Unit0>
       <Unit1>
-        <Filename Value="gvcode.pas"/>
+        <Filename Value="gviewcode.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="93"/>
-        <CursorPos X="44" Y="97"/>
+        <TopLine Value="44"/>
+        <CursorPos X="27" Y="76"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
-      <Position1>
-        <Filename Value="gvcode.pas"/>
-      </Position1>
-      <Position2>
-        <Filename Value="gvcode.pas"/>
-        <Caret Line="23" Column="61" TopLine="15"/>
-      </Position2>
-      <Position3>
-        <Filename Value="gvcode.pas"/>
-        <Caret Line="55" Column="11" TopLine="44"/>
-      </Position3>
-      <Position4>
-        <Filename Value="gvcode.pas"/>
-        <Caret Line="39" Column="36" TopLine="30"/>
-      </Position4>
-      <Position5>
-        <Filename Value="gvcode.pas"/>
-        <Caret Line="97" Column="75" TopLine="69"/>
-      </Position5>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="32\gv"/>
+      <Filename Value="32\gview"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -115,6 +99,9 @@
       <SmartLinkUnit Value="True"/>
       <TargetCPU Value="i386"/>
       <TargetOS Value="win32"/>
+      <Optimizations>
+        <OptimizationLevel Value="0"/>
+      </Optimizations>
     </CodeGeneration>
     <Linking>
       <Debugging>
