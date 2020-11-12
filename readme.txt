@@ -1,12 +1,12 @@
                                 Graphic view
                                 
-                                Version 2.1.6
+                                Version 2.2.5
 
-                        This software made by Popov Evgeniy Alekseyevich
+                        Simple graphic viewer by Popov Evgeniy Alekseyevich
 
 Program description
 
-This program is a simple graphic viewer
+This program is a simple graphic viewer with intuitive user interface.
 
 System requirement
 
@@ -15,11 +15,14 @@ WINDOWS Vista or higher for 64 bit system
 
 Supported formats
 
-JPEG
-BITMAP
-ICON
-WINDOWS METAFILE
-PORTABLE NETWORK GRAPHICS
+Joint Photographic Experts Group
+Windows Bitmap
+Windows icon
+Windows Metafile
+Enhanced Windows Metafile
+Portable Network Graphics
+Graphics Interchange Format
+X Pixmap
 
 License
 
@@ -32,7 +35,7 @@ You can send me a letter to tuzik87@inbox.ru
 About program modification
 
 Source code is included in source.zip archive. 
-It can be compiled under Lazarus 1.8.4 or higher.
+It can be compiled under Lazarus 2.0.10 or higher.
 
 Version history
 
@@ -50,4 +53,11 @@ Program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. Installer was chan
 2.0.5 — Program was improved.
 2.0.6 - Small changes.
 2.0.7 - Small bugs fixed.
-2.0.8 - 2.1.6 - Small changes.
+2.0.8 - 2.1.7 - Small changes.
+2.1.8 - Small changes in user interface.
+2.1.9 - Small bug was fixed.
+2.2 - 2.2.1 - Small changes.
+2.2.2 - Small changes in user interface.
+2.2.3 - Graphics Interchange Format support was added.
+2.2.4 - X Pixmap support was added.
+2.2.5 - Small changes.
