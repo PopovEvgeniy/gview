@@ -75,13 +75,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="6" Y="7"/>
+        <TopLine Value="73"/>
+        <CursorPos X="2" Y="81"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="gviewcode.pas"/>
         <Caret Line="38" Column="36" TopLine="29"/>
@@ -90,6 +91,14 @@
         <Filename Value="gviewcode.pas"/>
         <Caret Line="50" Column="5" TopLine="19"/>
       </Position2>
+      <Position3>
+        <Filename Value="gviewcode.pas"/>
+        <Caret Line="39" Column="36" TopLine="29"/>
+      </Position3>
+      <Position4>
+        <Filename Value="gviewcode.pas"/>
+        <Caret Line="17" Column="28" TopLine="10"/>
+      </Position4>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

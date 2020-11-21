@@ -4,7 +4,7 @@ unit gviewcode;
 
 interface
 
-uses sysutils ,Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls;
+uses sysutils ,Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls;
 
 type
 
@@ -15,7 +15,7 @@ type
     Image1: TImage;
     ShellTreeView1: TShellTreeView;
     StatusBar1: TStatusBar;
-    procedure FileListBox1Click(Sender: TObject);
+    procedure FileListBox1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
@@ -36,7 +36,7 @@ implementation
 procedure window_setup();
 begin
  Application.Title:='GRAPHIC VIEW';
- Form1.Caption:='GRAPHIC VIEW 2.2.5';
+ Form1.Caption:='GRAPHIC VIEW 2.2.7';
  Form1.BorderStyle:=bsSizeable;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -75,24 +75,20 @@ begin
  setup();
 end;
 
+procedure TForm1.FileListBox1Change(Sender: TObject);
+begin
+ Form1.Image1.Picture.LoadFromFile(Form1.FileListBox1.FileName);
+ Form1.StatusBar1.SimpleText:=ExtractFileName(Form1.FileListBox1.FileName);
+end;
+
 procedure TForm1.FormResize(Sender: TObject);
 begin
  resize_window();
 end;
 
-procedure TForm1.FileListBox1Click(Sender: TObject);
-begin
- if Form1.FileListBox1.FileName<>'' then
- begin
-  Form1.Image1.Picture.LoadFromFile(Form1.FileListBox1.FileName);
-  Form1.StatusBar1.SimpleText:=ExtractFileName(Form1.FileListBox1.FileName);
- end;
-
-end;
-
 procedure TForm1.ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
 begin
- FileListBox1.Directory:=ShellTreeView1.Path;
+ Form1.FileListBox1.Directory:=Form1.ShellTreeView1.Path;
 end;
 
 {$R *.lfm}

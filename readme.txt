@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.2.5
+                                Version 2.2.7
 
                         Simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -60,4 +60,4 @@ Program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. Installer was chan
 2.2.2 - Small changes in user interface.
 2.2.3 - Graphics Interchange Format support was added.
 2.2.4 - X Pixmap support was added.
-2.2.5 - Small changes.
+2.2.5 - 2.2.7 - Small changes.
