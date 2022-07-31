@@ -4,7 +4,7 @@ unit gviewcode;
 
 interface
 
-uses sysutils ,Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls;
+uses Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls;
 
 type
 
@@ -26,17 +26,13 @@ type
   end; 
 
 var Form1: TForm1;
-procedure window_setup();
-procedure viewer_setup();
-procedure resize_window();
-procedure setup();
 
 implementation
 
 procedure window_setup();
 begin
  Application.Title:='GRAPHIC VIEW';
- Form1.Caption:='GRAPHIC VIEW 2.2.7';
+ Form1.Caption:='GRAPHIC VIEW 2.2.8';
  Form1.BorderStyle:=bsSizeable;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -78,7 +74,7 @@ end;
 procedure TForm1.FileListBox1Change(Sender: TObject);
 begin
  Form1.Image1.Picture.LoadFromFile(Form1.FileListBox1.FileName);
- Form1.StatusBar1.SimpleText:=ExtractFileName(Form1.FileListBox1.FileName);
+ Form1.StatusBar1.SimpleText:=Form1.FileListBox1.FileName;
 end;
 
 procedure TForm1.FormResize(Sender: TObject);
