@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.2.8
+                                Version 2.3
 
                         Simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -10,8 +10,8 @@ This program is a simple graphic viewer with intuitive user interface.
 
 System requirement
 
-WINDOWS 2000 or higher for 32 bit system
-WINDOWS Vista or higher for 64 bit system
+WINDOWS 2000 or higher for 32-bit system
+WINDOWS Vista or higher for 64-bit system
 
 Supported formats
 
@@ -61,3 +61,5 @@ The program recompiled under BORLAND TURBO C++ 2006 EXPLORER. Installer changed.
 2.2.3 - Graphics Interchange Format support added.
 2.2.4 - X Pixmap support added.
 2.2.5 - 2.2.8 - Small changes.
+2.2.9 - Small bugs fixed.
+2.3 - Small changes.

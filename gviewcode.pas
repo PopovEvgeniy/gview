@@ -32,7 +32,7 @@ implementation
 procedure window_setup();
 begin
  Application.Title:='GRAPHIC VIEW';
- Form1.Caption:='GRAPHIC VIEW 2.2.8';
+ Form1.Caption:='GRAPHIC VIEW 2.3';
  Form1.BorderStyle:=bsSizeable;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -52,8 +52,8 @@ end;
 
 procedure resize_window();
 begin
- Form1.FileListBox1.Height:=Form1.ClientHeight-(Form1.ShellTreeView1.Top+Form1.ShellTreeView1.ClientHeight+10);
- Form1.Image1.Width:=Form1.Width-(Form1.ShellTreeView1.Left+Form1.ShellTreeView1.ClientWidth);
+ Form1.FileListBox1.Height:=Form1.ClientHeight-Form1.ShellTreeView1.Height;
+ Form1.Image1.Width:=Form1.ClientWidth-Form1.ShellTreeView1.Width;
  Form1.Image1.Height:=Form1.ClientHeight;
 end;
 
@@ -73,8 +73,12 @@ end;
 
 procedure TForm1.FileListBox1Change(Sender: TObject);
 begin
- Form1.Image1.Picture.LoadFromFile(Form1.FileListBox1.FileName);
- Form1.StatusBar1.SimpleText:=Form1.FileListBox1.FileName;
+ if Form1.FileListBox1.FileName<>'' then
+ begin
+  Form1.Image1.Picture.LoadFromFile(Form1.FileListBox1.FileName);
+  Form1.StatusBar1.SimpleText:=Form1.FileListBox1.FileName;
+ end;
+
 end;
 
 procedure TForm1.FormResize(Sender: TObject);
