@@ -1,17 +1,17 @@
                                 Graphic view
                                 
-                                Version 2.3
+                                Version 2.3.0.1
 
                         Simple graphic viewer by Popov Evgeniy Alekseyevich
 
 Program description
 
-This program is a simple graphic viewer with intuitive user interface.
+This program is a simple graphic viewer with an intuitive user interface.
 
 System requirement
 
-WINDOWS 2000 or higher for 32-bit system
-WINDOWS Vista or higher for 64-bit system
+Windows 2000 or higher for 32-bit system
+Windows Vista or higher for 64-bit system
 
 Supported formats
 
@@ -34,7 +34,7 @@ You can send me a letter to tuzik87@inbox.ru
 
 About program modification
 
-Source code included in source.zip archive. 
+The code is included in the source.zip archive. 
 It can be compiled under Lazarus 2.2.2 or higher.
 
 Version history
@@ -51,15 +51,16 @@ The program recompiled under BORLAND TURBO C++ 2006 EXPLORER. Installer changed.
 2.0.2 — 2.0.3 — Program improved.
 2.0.4 — Program totally rewrote.
 2.0.5 — Program improved.
-2.0.6 - Small changes.
-2.0.7 - Small bugs fixed.
-2.0.8 - 2.1.7 - Small changes.
-2.1.8 - Small changes in user interface.
-2.1.9 - Small bug fixed.
-2.2 - 2.2.1 - Small changes.
-2.2.2 - Small changes in user interface.
-2.2.3 - Graphics Interchange Format support added.
-2.2.4 - X Pixmap support added.
-2.2.5 - 2.2.8 - Small changes.
-2.2.9 - Small bugs fixed.
-2.3 - Small changes.
+2.0.6 — Small changes.
+2.0.7 — Small bugs fixed.
+2.0.8 — 2.1.7 — Small changes.
+2.1.8 — Small changes in user interface.
+2.1.9 — Small bug fixed.
+2.2 — 2.2.1 — Small changes.
+2.2.2 — Small changes in user interface.
+2.2.3 — Graphics Interchange Format support added.
+2.2.4 — X Pixmap support added.
+2.2.5 — 2.2.8 — Small changes.
+2.2.9 — Small bugs fixed.
+2.3 — Small changes.
+2.3.0.1 — Documentation updated.
