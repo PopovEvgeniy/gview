@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.3.0.3
+                                Version 2.3.0.4
 
                         Simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -39,28 +39,28 @@ It can be compiled under Lazarus 2.2.2 or higher.
 
 Version history
 
-1.0 — Initial version.
+1.0: Initial version.
 
 1.1:
-Help converted to htm help format. The program was totally rewritten.
+The help was converted to htm help format. The program was totally rewritten.
 The license was changed to GNU GENERAL PUBLIC LICENSE.
 The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer is changed.
 
-2.0 —  The program was totally rewritten.
-2.0.1 — The system integration was added.
-2.0.2 — 2.0.3 — Program improved.
-2.0.4 — The program was totally rewritten.
-2.0.5 — The program is improved.
-2.0.6 — Small changes.
-2.0.7 — Small bugs fixed.
-2.0.8 — 2.1.7 — Small changes.
-2.1.8 — Small changes in the user interface.
-2.1.9 — Small bug fixed.
-2.2 — 2.2.1 — Small changes.
-2.2.2 — Small changes in the user interface.
-2.2.3 — Graphics Interchange Format support has been added.
-2.2.4 — X Pixmap support added.
-2.2.5 — 2.2.8 — Small changes.
-2.2.9 — Small bugs fixed.
-2.3 — Small changes.
-2.3.0.1 — 2.3.0.3 — Documentation updated.
+2.0: The program was totally rewritten.
+2.0.1: The system integration was added.
+2.0.2-2.0.3: The program improved.
+2.0.4: The program was totally rewritten.
+2.0.5: The program is improved.
+2.0.6: The small changes.
+2.0.7: A small bug is fixed.
+2.0.8-2.1.7: The small changes.
+2.1.8: The small changes in the user interface.
+2.1.9: A small bug is fixed.
+2.2-2.2.1: The small changes.
+2.2.2: The small changes in the user interface.
+2.2.3: Graphics Interchange Format support has been added.
+2.2.4: X Pixmap support added.
+2.2.5-2.2.8: The small changes.
+2.2.9: A small bug is fixed.
+2.3: The small changes.
+2.3.0.1-2.3.0.4: Documentation updated.
