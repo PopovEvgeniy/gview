@@ -6,20 +6,17 @@ object Form1: TForm1
   Caption = 'Form1'
   ClientHeight = 421
   ClientWidth = 553
+  LCLVersion = '4.0.0.1'
   OnCreate = FormCreate
   OnResize = FormResize
-  LCLVersion = '2.2.2.0'
   object ShellTreeView1: TShellTreeView
     Left = 11
     Height = 249
     Top = 8
     Width = 269
-    FileSortType = fstNone
-    ReadOnly = True
     TabOrder = 0
-    OnChange = ShellTreeView1Change
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
-    ObjectTypes = [otFolders]
+    OnChange = ShellTreeView1Change
   end
   object FileListBox1: TFileListBox
     Left = 8
@@ -28,8 +25,8 @@ object Form1: TForm1
     Width = 272
     Directory = 'C:\Graphic view\Версия 2.0.4\source'
     ItemHeight = 0
-    OnChange = FileListBox1Change
     TabOrder = 1
+    OnChange = FileListBox1Change
   end
   object Image1: TImage
     Left = 288
