@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.3.1
+                                Version 2.3.2
 
                         Simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -35,7 +35,7 @@ You can send me a letter to tuzik87@inbox.ru.
 About program modification
 
 The code is included in the source.zip archive. 
-It can be compiled under Lazarus 4.0 RC1 or higher.
+It can be compiled under Lazarus 4.0 RC3 or higher.
 
 Version history
 
@@ -65,3 +65,4 @@ The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer 
 2.3: The small changes.
 2.3.0.1-2.3.0.5: The documentation has been updated.
 2.3.1: The source code was recompiled under Lazarus 4.0 RC1.
+2.3.2: The source code was recompiled under Lazarus 4.0 RC3.

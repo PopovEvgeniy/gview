@@ -74,18 +74,18 @@
       <Unit1>
         <Filename Value="gviewcode.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="MainWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="25"/>
-        <CursorPos X="36" Y="35"/>
+        <CursorPos X="41" Y="35"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="8" HistoryIndex="7">
       <Position1>
         <Filename Value="gviewcode.pas"/>
         <Caret Line="38" Column="36" TopLine="29"/>
@@ -102,6 +102,22 @@
         <Filename Value="gviewcode.pas"/>
         <Caret Line="17" Column="28" TopLine="10"/>
       </Position4>
+      <Position5>
+        <Filename Value="gviewcode.pas"/>
+        <Caret Line="43" Column="13" TopLine="37"/>
+      </Position5>
+      <Position6>
+        <Filename Value="gviewcode.pas"/>
+        <Caret Line="91" Column="48" TopLine="82"/>
+      </Position6>
+      <Position7>
+        <Filename Value="gviewcode.pas"/>
+        <Caret Line="55" Column="13" TopLine="48"/>
+      </Position7>
+      <Position8>
+        <Filename Value="gviewcode.pas"/>
+        <Caret Line="49" Column="13" TopLine="40"/>
+      </Position8>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

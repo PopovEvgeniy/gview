@@ -8,53 +8,53 @@ uses Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrl
 
 type
 
-  { TForm1 }
+  { TMainWindow }
 
-  TForm1 = class(TForm)
-    FileListBox1: TFileListBox;
-    Image1: TImage;
-    ShellTreeView1: TShellTreeView;
-    StatusBar1: TStatusBar;
-    procedure FileListBox1Change(Sender: TObject);
+  TMainWindow = class(TForm)
+    FileNavigator: TFileListBox;
+    Viewer: TImage;
+    DirectoryNavigator: TShellTreeView;
+    FileBar: TStatusBar;
+    procedure FileNavigatorChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
-    procedure ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
+    procedure DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
   private
     { private declarations }
   public
     { public declarations }
   end; 
 
-var Form1: TForm1;
+var MainWindow: TMainWindow;
 
 implementation
 
 procedure window_setup();
 begin
- Application.Title:='GRAPHIC VIEW';
- Form1.Caption:='GRAPHIC VIEW 2.3.1';
- Form1.BorderStyle:=bsSizeable;
- Form1.Font.Name:=Screen.MenuFont.Name;
- Form1.Font.Size:=14;
+ Application.Title:='Graphic view';
+ MainWindow.Caption:='Graphic view 2.3.2';
+ MainWindow.BorderStyle:=bsSizeable;
+ MainWindow.Font.Name:=Screen.MenuFont.Name;
+ MainWindow.Font.Size:=14;
 end;
 
 procedure viewer_setup();
 begin
- Form1.Image1.Stretch:=False;
- Form1.Image1.Center:=False;
- Form1.Image1.AutoSize:=False;
- Form1.Image1.Proportional:=True;
- Form1.FileListBox1.MultiSelect:=False;
- Form1.FileListBox1.Sorted:=True;
- Form1.StatusBar1.SimpleText:='';
- Form1.FileListBox1.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf *.png;*.gif;*.pxm';
+ MainWindow.Viewer.Stretch:=False;
+ MainWindow.Viewer.Center:=False;
+ MainWindow.Viewer.AutoSize:=False;
+ MainWindow.Viewer.Proportional:=True;
+ MainWindow.FileNavigator.MultiSelect:=False;
+ MainWindow.FileNavigator.Sorted:=True;
+ MainWindow.FileBar.SimpleText:='';
+ MainWindow.FileNavigator.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf *.png;*.gif;*.pxm';
 end;
 
 procedure resize_window();
 begin
- Form1.FileListBox1.Height:=Form1.ClientHeight-Form1.ShellTreeView1.Height;
- Form1.Image1.Width:=Form1.ClientWidth-Form1.ShellTreeView1.Width;
- Form1.Image1.Height:=Form1.ClientHeight;
+ MainWindow.FileNavigator.Height:=MainWindow.ClientHeight-MainWindow.DirectoryNavigator.Height;
+ MainWindow.Viewer.Width:=MainWindow.ClientWidth-MainWindow.DirectoryNavigator.Width;
+ MainWindow.Viewer.Height:=MainWindow.ClientHeight;
 end;
 
 procedure setup();
@@ -64,35 +64,35 @@ begin
  resize_window();
 end;
 
-{ TForm1 }
+{ TMainWindow }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TMainWindow.FormCreate(Sender: TObject);
 begin
  setup();
 end;
 
-procedure TForm1.FileListBox1Change(Sender: TObject);
+procedure TMainWindow.FileNavigatorChange(Sender: TObject);
 begin
- if Form1.FileListBox1.FileName<>'' then
+ if MainWindow.FileNavigator.FileName<>'' then
  begin
-  Form1.Image1.Picture.LoadFromFile(Form1.FileListBox1.FileName);
-  Form1.StatusBar1.SimpleText:=Form1.FileListBox1.FileName;
+  MainWindow.Viewer.Picture.LoadFromFile(MainWindow.FileNavigator.FileName);
+  MainWindow.FileBar.SimpleText:=MainWindow.FileNavigator.FileName;
  end;
 
 end;
 
-procedure TForm1.FormResize(Sender: TObject);
+procedure TMainWindow.FormResize(Sender: TObject);
 begin
  resize_window();
 end;
 
-procedure TForm1.ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
+procedure TMainWindow.DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
 begin
- Form1.FileListBox1.Directory:=Form1.ShellTreeView1.Path;
+ MainWindow.FileNavigator.Directory:=MainWindow.DirectoryNavigator.Path;
 end;
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TMainWindow }
 
 end.
