@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.3.2
+                                Version 2.3.2.1
 
                         Simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -26,11 +26,7 @@ X Pixmap
 
 License
 
-This program is distributed under GNU GENERAL PUBLIC LICENSE 
-
-Contact
-
-You can send me a letter to tuzik87@inbox.ru.
+This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
 About program modification
 
@@ -42,7 +38,7 @@ Version history
 1.0: Initial version.
 
 1.1:
-The help was converted to htm help format. The program was totally rewritten.
+The help was converted to the htm help format. The program was totally rewritten.
 The license was changed to GNU GENERAL PUBLIC LICENSE.
 The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer has changed.
 
@@ -66,3 +62,4 @@ The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer 
 2.3.0.1-2.3.0.5: The documentation has been updated.
 2.3.1: The source code was recompiled under Lazarus 4.0 RC1.
 2.3.2: The source code was recompiled under Lazarus 4.0 RC3.
+2.3.2.1: The documentation has been updated.
