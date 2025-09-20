@@ -1,45 +1,34 @@
                                 Graphic view
                                 
-                                Version 2.3.2.1
+                                Version 2.3.3
 
-                        Simple graphic viewer by Popov Evgeniy Alekseyevich
+                        The simple graphic viewer by Popov Evgeniy Alekseyevich
 
-Program description
+The program description.
 
 This program is a simple graphic viewer with an intuitive user interface.
 
-System requirements
+System requirements.
 
 Windows 2000 or higher for 32-bit systems
 Windows Vista or higher for 64-bit systems
 
-Supported formats
-
-Joint Photographic Experts Group
-Windows Bitmap
-Windows icon
-Windows Metafile
-Enhanced Windows Metafile
-Portable Network Graphics
-Graphics Interchange Format
-X Pixmap
-
-License
+License.
 
 This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
-About program modification
+The source code.
 
 The code is included in the source.zip archive. 
-It can be compiled under Lazarus 4.0 RC3 or higher.
+It can be compiled under Lazarus 4.2 or higher.
 
-Version history
+Version history.
 
-1.0: Initial version.
+1.0: The initial version.
 
 1.1:
-The help was converted to the htm help format. The program was totally rewritten.
-The license was changed to GNU GENERAL PUBLIC LICENSE.
+The help was converted to the HTM help format. The program was totally rewritten.
+The license was changed to the GNU GENERAL PUBLIC LICENSE.
 The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer has changed.
 
 2.0: The program was totally rewritten.
@@ -63,3 +52,4 @@ The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer 
 2.3.1: The source code was recompiled under Lazarus 4.0 RC1.
 2.3.2: The source code was recompiled under Lazarus 4.0 RC3.
 2.3.2.1: The documentation has been updated.
+2.3.3: The source code was recompiled under Lazarus 4.2.

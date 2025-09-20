@@ -32,7 +32,7 @@ implementation
 procedure window_setup();
 begin
  Application.Title:='Graphic view';
- MainWindow.Caption:='Graphic view 2.3.2';
+ MainWindow.Caption:='Graphic view 2.3.3';
  MainWindow.BorderStyle:=bsSizeable;
  MainWindow.Font.Name:=Screen.MenuFont.Name;
  MainWindow.Font.Size:=14;
