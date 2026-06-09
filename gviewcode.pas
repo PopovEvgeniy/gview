@@ -1,6 +1,12 @@
 unit gviewcode;
 
-{$mode objfpc}{$H+}
+{
+ This sofware was made by Popov Evgeniy Alekseyevich.
+ It is distributed under the GNU GENERAL PUBLIC LICENSE (Version 2 or higher).
+}
+
+{$mode objfpc}
+{$H+}
 
 interface
 
@@ -20,7 +26,10 @@ type
     procedure FormResize(Sender: TObject);
     procedure DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
   private
-    { private declarations }
+    procedure window_setup();
+    procedure viewer_setup();
+    procedure resize_window();
+    procedure setup();
   public
     { public declarations }
   end; 
@@ -29,66 +38,66 @@ var MainWindow: TMainWindow;
 
 implementation
 
-procedure window_setup();
+procedure TMainWindow.window_setup();
 begin
  Application.Title:='Graphic view';
- MainWindow.Caption:='Graphic view 2.3.3';
- MainWindow.BorderStyle:=bsSizeable;
- MainWindow.Font.Name:=Screen.MenuFont.Name;
- MainWindow.Font.Size:=14;
+ Self.Caption:='Graphic view 2.3.4';
+ Self.BorderStyle:=bsSizeable;
+ Self.Font.Name:=Screen.MenuFont.Name;
+ Self.Font.Size:=14;
 end;
 
-procedure viewer_setup();
+procedure TMainWindow.viewer_setup();
 begin
- MainWindow.Viewer.Stretch:=False;
- MainWindow.Viewer.Center:=False;
- MainWindow.Viewer.AutoSize:=False;
- MainWindow.Viewer.Proportional:=True;
- MainWindow.FileNavigator.MultiSelect:=False;
- MainWindow.FileNavigator.Sorted:=True;
- MainWindow.FileBar.SimpleText:='';
- MainWindow.FileNavigator.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf *.png;*.gif;*.pxm';
+ Self.Viewer.Stretch:=False;
+ Self.Viewer.Center:=False;
+ Self.Viewer.AutoSize:=False;
+ Self.Viewer.Proportional:=True;
+ Self.FileNavigator.MultiSelect:=False;
+ Self.FileNavigator.Sorted:=True;
+ Self.FileBar.SimpleText:='';
+ Self.FileNavigator.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf *.png;*.gif;*.pxm';
 end;
 
-procedure resize_window();
+procedure TMainWindow.resize_window();
 begin
- MainWindow.FileNavigator.Height:=MainWindow.ClientHeight-MainWindow.DirectoryNavigator.Height;
- MainWindow.Viewer.Width:=MainWindow.ClientWidth-MainWindow.DirectoryNavigator.Width;
- MainWindow.Viewer.Height:=MainWindow.ClientHeight;
+ Self.FileNavigator.Height:=Self.ClientHeight-Self.DirectoryNavigator.Height;
+ Self.Viewer.Width:=Self.ClientWidth-Self.DirectoryNavigator.Width;
+ Self.Viewer.Height:=Self.ClientHeight;
 end;
 
-procedure setup();
+procedure TMainWindow.setup();
 begin
- window_setup();
- viewer_setup();
- resize_window();
+ Self.window_setup();
+ Self.viewer_setup();
+ Self.resize_window();
 end;
 
 { TMainWindow }
 
 procedure TMainWindow.FormCreate(Sender: TObject);
 begin
- setup();
+ Self.setup();
 end;
 
 procedure TMainWindow.FileNavigatorChange(Sender: TObject);
 begin
- if MainWindow.FileNavigator.FileName<>'' then
+ if Self.FileNavigator.FileName<>'' then
  begin
-  MainWindow.Viewer.Picture.LoadFromFile(MainWindow.FileNavigator.FileName);
-  MainWindow.FileBar.SimpleText:=MainWindow.FileNavigator.FileName;
+  Self.Viewer.Picture.LoadFromFile(Self.FileNavigator.FileName);
+  Self.FileBar.SimpleText:=Self.FileNavigator.FileName;
  end;
 
 end;
 
 procedure TMainWindow.FormResize(Sender: TObject);
 begin
- resize_window();
+ Self.resize_window();
 end;
 
 procedure TMainWindow.DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
 begin
- MainWindow.FileNavigator.Directory:=MainWindow.DirectoryNavigator.Path;
+ Self.FileNavigator.Directory:=Self.DirectoryNavigator.Path;
 end;
 
 {$R *.lfm}
