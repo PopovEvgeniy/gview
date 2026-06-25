@@ -6,8 +6,10 @@ object MainWindow: TMainWindow
   Caption = 'Graphic view'
   ClientHeight = 421
   ClientWidth = 613
+  Menu = MainMenu
   LCLVersion = '4.8.0.0'
   OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
   OnResize = FormResize
   object DirectoryNavigator: TShellTreeView
     Left = 11
@@ -23,14 +25,13 @@ object MainWindow: TMainWindow
     Height = 148
     Top = 268
     Width = 328
-    Directory = '.'
     ItemHeight = 15
     TabOrder = 1
     OnChange = FileNavigatorChange
   end
   object Viewer: TImage
     Left = 344
-    Height = 407
+    Height = 330
     Top = 14
     Width = 264
   end
@@ -40,5 +41,33 @@ object MainWindow: TMainWindow
     Top = 398
     Width = 613
     Panels = <>
+  end
+  object OpenDialog: TOpenPictureDialog
+    Title = ''
+    Filter = 'All files|*.*'
+    Left = 384
+    Top = 352
+  end
+  object MainMenu: TMainMenu
+    Left = 472
+    Top = 352
+    object FileMenuItem: TMenuItem
+      Caption = 'File'
+      object LoadMenuItem: TMenuItem
+        Caption = 'Load'
+        OnClick = LoadMenuItemClick
+      end
+      object ExitMenuItem: TMenuItem
+        Caption = 'Exit'
+        OnClick = ExitMenuItemClick
+      end
+    end
+    object HelpMenuItem: TMenuItem
+      Caption = 'Help'
+      object AboutMenuItem: TMenuItem
+        Caption = 'About Graphic view'
+        OnClick = AboutMenuItemClick
+      end
+    end
   end
 end
