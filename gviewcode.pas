@@ -10,7 +10,7 @@ unit gviewcode;
 
 interface
 
-uses Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls;
+uses SysUtils, Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls;
 
 type
 
@@ -26,7 +26,9 @@ type
     procedure FormResize(Sender: TObject);
     procedure DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
   private
+    procedure load_image(const target:string);
     procedure window_setup();
+    procedure interface_setup();
     procedure viewer_setup();
     procedure resize_window();
     procedure setup();
@@ -38,37 +40,54 @@ var MainWindow: TMainWindow;
 
 implementation
 
+procedure TMainWindow.load_image(const target:string);
+begin
+ try
+  Self.Viewer.Picture.Clear();
+  Self.Viewer.Picture.LoadFromFile(target);
+  Self.FileBar.SimpleText:=target;
+ except
+  On E:Exception do Self.FileBar.SimpleText:=E.Message;
+ end;
+
+end;
+
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='Graphic view';
- Self.Caption:='Graphic view 2.3.4';
+ Self.Caption:='Graphic view 2.3.9';
  Self.BorderStyle:=bsSizeable;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
 end;
 
-procedure TMainWindow.viewer_setup();
+procedure TMainWindow.interface_setup();
 begin
- Self.Viewer.Stretch:=False;
- Self.Viewer.Center:=False;
- Self.Viewer.AutoSize:=False;
- Self.Viewer.Proportional:=True;
  Self.FileNavigator.MultiSelect:=False;
  Self.FileNavigator.Sorted:=True;
  Self.FileBar.SimpleText:='';
  Self.FileNavigator.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf *.png;*.gif;*.pxm';
 end;
 
+procedure TMainWindow.viewer_setup();
+begin
+ Self.Viewer.Stretch:=True;
+ Self.Viewer.Proportional:=True;
+ Self.Viewer.Center:=False;
+ Self.Viewer.AutoSize:=False;
+end;
+
 procedure TMainWindow.resize_window();
 begin
- Self.FileNavigator.Height:=Self.ClientHeight-Self.DirectoryNavigator.Height;
- Self.Viewer.Width:=Self.ClientWidth-Self.DirectoryNavigator.Width;
+ Self.FileNavigator.Height:=Self.ClientHeight-Self.DirectoryNavigator.Height-Self.DirectoryNavigator.Top;
+ Self.Viewer.Width:=Self.ClientWidth-Self.DirectoryNavigator.Width-Self.DirectoryNavigator.Left;
  Self.Viewer.Height:=Self.ClientHeight;
 end;
 
 procedure TMainWindow.setup();
 begin
  Self.window_setup();
+ Self.interface_setup();
  Self.viewer_setup();
  Self.resize_window();
 end;
@@ -82,12 +101,7 @@ end;
 
 procedure TMainWindow.FileNavigatorChange(Sender: TObject);
 begin
- if Self.FileNavigator.FileName<>'' then
- begin
-  Self.Viewer.Picture.LoadFromFile(Self.FileNavigator.FileName);
-  Self.FileBar.SimpleText:=Self.FileNavigator.FileName;
- end;
-
+ if Self.FileNavigator.FileName<>'' then Self.load_image(Self.FileNavigator.FileName);
 end;
 
 procedure TMainWindow.FormResize(Sender: TObject);

@@ -2,18 +2,18 @@ object MainWindow: TMainWindow
   Left = 234
   Height = 421
   Top = 123
-  Width = 553
+  Width = 613
   Caption = 'Graphic view'
   ClientHeight = 421
-  ClientWidth = 553
-  LCLVersion = '4.6.0.0'
+  ClientWidth = 613
+  LCLVersion = '4.8.0.0'
   OnCreate = FormCreate
   OnResize = FormResize
   object DirectoryNavigator: TShellTreeView
     Left = 11
     Height = 249
     Top = 8
-    Width = 269
+    Width = 325
     TabOrder = 0
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
     OnChange = DirectoryNavigatorChange
@@ -22,23 +22,22 @@ object MainWindow: TMainWindow
     Left = 8
     Height = 148
     Top = 268
-    Width = 272
-    Directory = 'D:\Образ\gview\Version 2.3.3\Gview\source'
+    Width = 328
     ItemHeight = 15
     TabOrder = 1
     OnChange = FileNavigatorChange
   end
   object Viewer: TImage
-    Left = 288
+    Left = 344
     Height = 407
-    Top = 9
+    Top = 14
     Width = 264
   end
   object FileBar: TStatusBar
     Left = 0
     Height = 23
     Top = 398
-    Width = 553
+    Width = 613
     Panels = <>
   end
 end

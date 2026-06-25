@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.3.4
+                                Version 2.3.9
 
                         The simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -10,8 +10,8 @@ This program is a simple graphic viewer with an intuitive user interface.
 
 System requirements.
 
-Windows 2000 or higher for 32-bit systems
-Windows Vista or higher for 64-bit systems
+Windows 2000 or higher for 32-bit systems.
+Windows Vista or higher for 64-bit systems.
 
 License.
 
@@ -20,7 +20,7 @@ This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 The source code.
 
 The code is included in the source.zip archive. 
-It can be compiled under Lazarus 4.6 or higher.
+It can be compiled under Lazarus 4.8 or higher.
 
 Version history.
 
@@ -53,4 +53,4 @@ The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer 
 2.3.2: The source code was recompiled under Lazarus 4.0 RC3.
 2.3.2.1: The documentation has been updated.
 2.3.3: The source code was recompiled under Lazarus 4.2.
-2.3.4: The small changes.
+2.3.4-2.3.9: The small changes.
