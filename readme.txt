@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.3.9
+                                Version 2.4.2
 
                         The simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -54,3 +54,5 @@ The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer 
 2.3.2.1: The documentation has been updated.
 2.3.3: The source code was recompiled under Lazarus 4.2.
 2.3.4-2.3.9: The small changes.
+2.4: The system integration has been added.
+2.4.1-2.4.2: The small changes.

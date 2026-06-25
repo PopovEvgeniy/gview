@@ -23,6 +23,7 @@ object MainWindow: TMainWindow
     Height = 148
     Top = 268
     Width = 328
+    Directory = '.'
     ItemHeight = 15
     TabOrder = 1
     OnChange = FileNavigatorChange

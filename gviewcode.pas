@@ -26,7 +26,9 @@ type
     procedure FormResize(Sender: TObject);
     procedure DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
   private
+    procedure set_target_directory(const target:string);
     procedure load_image(const target:string);
+    procedure check_command_line();
     procedure window_setup();
     procedure interface_setup();
     procedure viewer_setup();
@@ -40,6 +42,12 @@ var MainWindow: TMainWindow;
 
 implementation
 
+procedure TMainWindow.set_target_directory(const target:string);
+begin
+ Self.DirectoryNavigator.Path:=ExtractFilePath(target);
+ Self.FileNavigator.Directory:=Self.DirectoryNavigator.Path;
+end;
+
 procedure TMainWindow.load_image(const target:string);
 begin
  try
@@ -52,10 +60,22 @@ begin
 
 end;
 
+procedure TMainWindow.check_command_line();
+var target:string;
+begin
+ if ParamCount()>0 then
+ begin
+  target:=ParamStr(1);
+  Self.set_target_directory(target);
+  Self.load_image(target);
+ end;
+
+end;
+
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='Graphic view';
- Self.Caption:='Graphic view 2.3.9';
+ Self.Caption:='Graphic view 2.4.2';
  Self.BorderStyle:=bsSizeable;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -63,6 +83,7 @@ end;
 
 procedure TMainWindow.interface_setup();
 begin
+ Self.DirectoryNavigator.ScrollBars:=ssBoth;
  Self.FileNavigator.MultiSelect:=False;
  Self.FileNavigator.Sorted:=True;
  Self.FileBar.SimpleText:='';
@@ -90,6 +111,7 @@ begin
  Self.interface_setup();
  Self.viewer_setup();
  Self.resize_window();
+ Self.check_command_line();
 end;
 
 { TMainWindow }
