@@ -10,7 +10,7 @@ unit gviewcode;
 
 interface
 
-uses SysUtils, Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls, ExtDlgs, Dialogs, Menus, LCLProc;
+uses SysUtils, Classes, Forms, Controls, Graphics, ShellCtrls, FileCtrl, ExtCtrls, ComCtrls, StdCtrls, ExtDlgs, Dialogs, Menus, LCLProc, LCLIntf;
 
 type
 
@@ -22,8 +22,10 @@ type
     FileMenuItem: TMenuItem;
     HelpMenuItem: TMenuItem;
     LoadMenuItem: TMenuItem;
-    ExitMenuItem: TMenuItem;
+    OpenDirectoryMenuItem: TMenuItem;
     AboutMenuItem: TMenuItem;
+    SelectDirectoryDialog: TSelectDirectoryDialog;
+    ShowHelpMenuItem: TMenuItem;
     OpenDialog: TOpenPictureDialog;
     Viewer: TImage;
     DirectoryNavigator: TShellTreeView;
@@ -34,8 +36,9 @@ type
     procedure FileNavigatorChange(Sender: TObject);
     procedure DirectoryNavigatorChange(Sender: TObject; Node: TTreeNode);
     procedure LoadMenuItemClick(Sender: TObject);
-    procedure ExitMenuItemClick(Sender: TObject);
+    procedure OpenDirectoryMenuItemClick(Sender: TObject);
     procedure AboutMenuItemClick(Sender: TObject);
+    procedure ShowHelpMenuItemClick(Sender: TObject);
   private
     procedure set_target_directory(const target:string);
     procedure load_image(const target:string);
@@ -54,6 +57,21 @@ type
 var MainWindow: TMainWindow;
 
 implementation
+
+procedure show_help();
+var help:string;
+begin
+ help:=ExtractFilePath(Application.ExeName)+'readme.txt';
+ if FileExists(help) then
+ begin
+  OpenDocument(help);
+ end
+ else
+ begin
+  ShowMessage('Cannot find the help file');
+ end;
+
+end;
 
 procedure TMainWindow.set_target_directory(const target:string);
 begin
@@ -88,7 +106,7 @@ end;
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='Graphic view';
- Self.Caption:='Graphic view 2.5';
+ Self.Caption:='Graphic view 2.5.4';
  Self.BorderStyle:=bsSizeable;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -100,6 +118,7 @@ begin
  Self.FileNavigator.MultiSelect:=False;
  Self.FileNavigator.Sorted:=True;
  Self.AllowDropFiles:=True;
+ Self.FileNavigator.Directory:='';
  Self.FileBar.SimpleText:='';
  Self.FileNavigator.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf;*.png;*.gif;*.pxm';
 end;
@@ -107,23 +126,27 @@ end;
 procedure TMainWindow.set_shortcut();
 begin
  Self.LoadMenuItem.ShortCut:=TextToShortCut('Ctrl+O');
- Self.ExitMenuItem.ShortCut:=TextToShortCut('Ctrl+E');
+ Self.OpenDirectoryMenuItem.ShortCut:=TextToShortCut('Ctrl+D');
+ Self.ShowHelpMenuItem.ShortCut:=TextToShortCut('F1');
 end;
 
 procedure TMainWindow.dialog_setup();
 begin
  Self.OpenDialog.InitialDir:='';
+ Self.OpenDialog.FileName:='';
+ Self.SelectDirectoryDialog.Title:='Please select the image directory';
  Self.OpenDialog.Title:='Open an image';
  Self.OpenDialog.Filter:='All supported formats|'+Self.FileNavigator.Mask;
- Self.OpenDialog.FileName:=Self.FileNavigator.Mask;
 end;
 
 procedure TMainWindow.viewer_setup();
 begin
- Self.Viewer.Stretch:=True;
- Self.Viewer.Proportional:=True;
  Self.Viewer.Center:=False;
  Self.Viewer.AutoSize:=False;
+ Self.Viewer.Stretch:=False;
+ Self.Viewer.Proportional:=True;
+ Self.Viewer.StretchInEnabled:=True;
+ Self.Viewer.StretchOutEnabled:=True;
 end;
 
 procedure TMainWindow.resize_window();
@@ -182,14 +205,19 @@ begin
 
 end;
 
-procedure TMainWindow.ExitMenuItemClick(Sender: TObject);
+procedure TMainWindow.OpenDirectoryMenuItemClick(Sender: TObject);
 begin
- Self.Close();
+ if Self.SelectDirectoryDialog.Execute()=True then Self.DirectoryNavigator.Path:=Self.SelectDirectoryDialog.FileName;
 end;
 
 procedure TMainWindow.AboutMenuItemClick(Sender: TObject);
 begin
  ShowMessage('Graphic view is a simple graphic viewer by Popov Evgeniy Alekseyevich');
+end;
+
+procedure TMainWindow.ShowHelpMenuItemClick(Sender: TObject);
+begin
+ show_help();
 end;
 
 {$R *.lfm}

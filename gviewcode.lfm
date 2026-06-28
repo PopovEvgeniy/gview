@@ -25,6 +25,7 @@ object MainWindow: TMainWindow
     Height = 148
     Top = 268
     Width = 328
+    Directory = '.'
     ItemHeight = 15
     TabOrder = 1
     OnChange = FileNavigatorChange
@@ -45,21 +46,21 @@ object MainWindow: TMainWindow
   object OpenDialog: TOpenPictureDialog
     Title = ''
     Filter = 'All files|*.*'
-    Left = 384
+    Left = 368
     Top = 352
   end
   object MainMenu: TMainMenu
-    Left = 472
+    Left = 568
     Top = 352
     object FileMenuItem: TMenuItem
-      Caption = 'File'
+      Caption = 'Image'
       object LoadMenuItem: TMenuItem
-        Caption = 'Load'
+        Caption = 'Load from the file'
         OnClick = LoadMenuItemClick
       end
-      object ExitMenuItem: TMenuItem
-        Caption = 'Exit'
-        OnClick = ExitMenuItemClick
+      object OpenDirectoryMenuItem: TMenuItem
+        Caption = 'Open the image directory'
+        OnClick = OpenDirectoryMenuItemClick
       end
     end
     object HelpMenuItem: TMenuItem
@@ -68,6 +69,15 @@ object MainWindow: TMainWindow
         Caption = 'About Graphic view'
         OnClick = AboutMenuItemClick
       end
+      object ShowHelpMenuItem: TMenuItem
+        Caption = 'Show help'
+        OnClick = ShowHelpMenuItemClick
+      end
     end
+  end
+  object SelectDirectoryDialog: TSelectDirectoryDialog
+    Title = ''
+    Left = 469
+    Top = 352
   end
 end

@@ -1,6 +1,6 @@
                                 Graphic view
                                 
-                                Version 2.5
+                                Version 2.5.4
 
                         The simple graphic viewer by Popov Evgeniy Alekseyevich
 
@@ -61,3 +61,6 @@ The program was recompiled under BORLAND TURBO C++ 2006 EXPLORER. The installer 
 2.4.7: The user interface has improved.
 2.4.8: The small changes.
 2.4.9-2.5: The user interface has improved.
+2.5.1: The small changes.
+2.5.2-2.5.3: The user interface has improved.
+2.5.4: The small changes.
