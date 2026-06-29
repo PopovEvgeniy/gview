@@ -62,13 +62,9 @@ procedure show_help();
 var help:string;
 begin
  help:=ExtractFilePath(Application.ExeName)+'readme.txt';
- if FileExists(help) then
+ if OpenDocument(help)=False then
  begin
-  OpenDocument(help);
- end
- else
- begin
-  ShowMessage('Cannot find the help file');
+  ShowMessage('Cannot show the help file');
  end;
 
 end;
@@ -106,7 +102,7 @@ end;
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='Graphic view';
- Self.Caption:='Graphic view 2.5.4';
+ Self.Caption:='Graphic view 2.5.5';
  Self.BorderStyle:=bsSizeable;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -118,7 +114,6 @@ begin
  Self.FileNavigator.MultiSelect:=False;
  Self.FileNavigator.Sorted:=True;
  Self.AllowDropFiles:=True;
- Self.FileNavigator.Directory:='';
  Self.FileBar.SimpleText:='';
  Self.FileNavigator.Mask:='*.bmp;*.jpg;*.ico;*.emf;*.wmf;*.png;*.gif;*.pxm';
 end;
@@ -141,9 +136,9 @@ end;
 
 procedure TMainWindow.viewer_setup();
 begin
- Self.Viewer.Center:=False;
  Self.Viewer.AutoSize:=False;
  Self.Viewer.Stretch:=False;
+ Self.Viewer.Center:=True;
  Self.Viewer.Proportional:=True;
  Self.Viewer.StretchInEnabled:=True;
  Self.Viewer.StretchOutEnabled:=True;
